@@ -1,8 +1,34 @@
+import Bracket from "../components/Bracket";
 
-export default function IntercontinentalPlayoffs(){
-    return(
-        <>
-            Intercontinental playoffs.
-        </>
-    )
+export default function IntercontinentalPlayoffs() {
+    return (
+        <div className="grid items-center justify-center p-6">
+            <h1 className="m-6">Intercontinental playoffs</h1>
+
+            <p>
+                The inter-confederation play-offs of the 2026 FIFA World Cup qualification
+                tournament will determine two qualification spots for the World Cup.
+            </p>
+
+            <div className="mt-10">
+                <h3 className="font-bold text-lg mb-4">Path 1</h3>
+
+                <Bracket
+                    team1={{
+                        name: "New Caledonia",
+                        flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_FLNKS.svg/1200px-Flag_of_FLNKS.svg.png",
+                        confederation: "OFC"
+                    }}
+                    team2={{
+                        name: "Jamaica",
+                        flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Jamaica.svg/960px-Flag_of_Jamaica.svg.png",
+                        confederation: "CONCACAF"
+                    }}
+                />
+                <h3 className="font-bold text-lg">Path 2</h3>
+                <Bracket team1={{ name: "Bolivia", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_Bolivia_%28state%29.svg/2560px-Flag_of_Bolivia_%28state%29.svg.png", confederation: "CONMEBOL" }} 
+                team2={{ name: "Suriname", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flag_of_Suriname.svg/1200px-Flag_of_Suriname.svg.png", confederation: "CONCACAF" }} />
+            </div>
+        </div>
+    );
 }

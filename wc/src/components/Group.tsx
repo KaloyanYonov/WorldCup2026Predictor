@@ -1,0 +1,7 @@
+type groupProps = {
+
+    name: string,
+    
+
+
+}
