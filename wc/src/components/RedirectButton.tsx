@@ -9,7 +9,7 @@ export default function RedirectButton({ to, text }: RedirectButtonProps) {
   return (
     <Link
       to={to}
-      className="bg-yellow-400 px-4 py-2 rounded inline-block text-black"
+      className="bg-yellow-400 px-4 py-2 rounded inline-block text-black flex text-center m-6"
     >
       {text}
     </Link>

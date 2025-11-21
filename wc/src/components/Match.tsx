@@ -13,9 +13,9 @@ export type matchProps = {
 
 export default function Match({team1,team2} : matchProps){
     return(
-        <div className="flex flex-col gap-4 p-4 border rounded-lg">
+        <button className="flex flex-col gap-4 p-4 border rounded-lg">
               <Team {...team1} />
               <Team {...team2} />
-        </div>
+        </button>
     )
 }
