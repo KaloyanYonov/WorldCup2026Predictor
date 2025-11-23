@@ -1,9 +1,12 @@
 import IntercontinentalBracket from "../components/ICBracket";
+import RedirectButton from "../components/RedirectButton";
 
 export default function IntercontinentalPlayoffs() {
   return (
     <div className="grid items-center justify-center p-6">
+      
       <h1 className="m-6">Intercontinental Playoffs</h1>
+      <RedirectButton to="/" text="Main page"/>
 
       <p>
         The inter-confederation play-offs of the 2026 FIFA World Cup qualification

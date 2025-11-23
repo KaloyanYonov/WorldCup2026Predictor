@@ -1,3 +1,4 @@
+import RedirectButton from "./RedirectButton";
 import Team from "./Team"
 import type { teamProps } from "./Team";
 

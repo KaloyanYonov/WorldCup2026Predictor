@@ -7,7 +7,7 @@ export type teamProps = {
 
 export default function Team({name,flag,confederation} : teamProps){
     return(
-        <div className="bg-transparent">
+        <div className="bg-transparent border rounded animate-pulse">
             <img src={flag} alt="" className="w-6"/>
             <h3 className="font-bold">{name} {confederation ?  `(${confederation})` : " "}</h3>
         </div>
