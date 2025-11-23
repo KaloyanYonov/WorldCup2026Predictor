@@ -15,12 +15,12 @@ export default function IntercontinentalPlayoffs() {
         <h3 className="font-bold text-lg mb-4">Path 1</h3>
         <IntercontinentalBracket 
           playInMatch={{
-            team1: { name: "New Caledonia", flag: "...", confederation: "OFC" },
-            team2: { name: "Jamaica", flag: "...", confederation: "CONCACAF" }
+            team1: { name: "New Caledonia", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_FLNKS.svg/1200px-Flag_of_FLNKS.svg.png", confederation: "OFC" },
+            team2: { name: "Jamaica", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Jamaica.svg/1200px-Flag_of_Jamaica.svg.png", confederation: "CONCACAF" }
           }}
           seededTeam={{
             name: "DR Congo",
-            flag: "",
+            flag: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg",
             confederation: "CAF"
           }}
         />
@@ -28,12 +28,12 @@ export default function IntercontinentalPlayoffs() {
         <h3 className="font-bold text-lg mb-4">Path 2</h3>
         <IntercontinentalBracket 
           playInMatch={{
-            team1: { name: "Bolivia", flag: "", confederation: "CONMEBOL" },
-            team2: { name: "Suriname", flag: "", confederation: "CONCACAF" }
+            team1: { name: "Bolivia", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_Bolivia_%28state%29.svg/2560px-Flag_of_Bolivia_%28state%29.svg.png", confederation: "CONMEBOL" },
+            team2: { name: "Suriname", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flag_of_Suriname.svg/1200px-Flag_of_Suriname.svg.png", confederation: "CONCACAF" }
           }}
           seededTeam={{
             name: "Iraq",
-            flag: "",
+            flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/1200px-Flag_of_Iraq.svg.png",
             confederation: "AFC"
           }}
         />

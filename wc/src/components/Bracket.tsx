@@ -53,7 +53,7 @@ export default function Bracket({ match1, match2 }: BracketProps) {
                 )}
             </div>
             {bracketWinner && (
-                <div className="mt-4 p-3 bg-green-200 rounded-xl">
+                <div className="mt-4 p-3 rounded-xl animate-pulse bg-yellow-200">
                     <h3 className="font-bold">Bracket Winner:</h3>
                     <p>{bracketWinner.name}</p>
                 </div>
