@@ -1,14 +1,10 @@
 import Bracket from "../components/Bracket";
-import RedirectButton from "../components/RedirectButton";
-
 
 export default function EuropeanPlayoffs() {
   return (
     <div className="flex">
+
       <h1>European Playoffs</h1>
-      <RedirectButton to="/" text="Main page"/>
-
-
       <h1>Path A</h1>
       <Bracket
         match1={{

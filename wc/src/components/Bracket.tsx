@@ -1,63 +1,75 @@
 import { useState } from "react";
 import Match from "./Match";
 import type { teamProps } from "./Team";
+import Header from "./Header";
 
 type BracketProps = {
-    match1: {
-        team1: teamProps;
-        team2: teamProps;
-    };
-    match2: {
-        team1: teamProps;
-        team2: teamProps;
-    };
+  match1: { team1: teamProps; team2: teamProps };
+  match2: { team1: teamProps; team2: teamProps };
 };
 
 export default function Bracket({ match1, match2 }: BracketProps) {
-    const [winner1, setWinner1] = useState<teamProps | null>(null);
-    const [winner2, setWinner2] = useState<teamProps | null>(null);
-    const [bracketWinner, setBracketWinner] = useState<teamProps | null>(null);
+  const [winner1, setWinner1] = useState<teamProps | null>(null);
+  const [winner2, setWinner2] = useState<teamProps | null>(null);
+  const [finalWinner, setFinalWinner] = useState<teamProps | null>(null);
 
-    return (
-        <div className="flex flex-col gap-8">
-            <div>
-                <h2 className="font-bold text-xl mb-2">Match 1</h2>
-                <Match 
-                    team1={match1.team1} 
-                    team2={match1.team2}
-                    onPickTeam1={() => setWinner1(match1.team1)}
-                    onPickTeam2={() => setWinner1(match1.team2)}
-                />
-            </div>
-            <div>
-                <h2 className="font-bold text-xl mb-2">Match 2</h2>
-                <Match 
-                    team1={match2.team1} 
-                    team2={match2.team2}
-                    onPickTeam1={() => setWinner2(match2.team1)}
-                    onPickTeam2={() => setWinner2(match2.team2)}
-                />
-            </div>
-            <div>
-                <h2 className="font-bold text-xl mt-6">Final</h2>
+  return (
+    <>
+    <Header/>
 
-                {winner1 && winner2 ? (
-                    <Match
-                        team1={winner1}
-                        team2={winner2}
-                        onPickTeam1={() => setBracketWinner(winner1)}
-                        onPickTeam2={() => setBracketWinner(winner2)}
-                    />
-                ) : (
-                    <p className="text-gray-500">Pick semifinal winners to enable the final.</p>
-                )}
+        <div className="flex flex-col items-center my-10">
+        <h2 className="font-bold text-lg mb-4">BRACKET</h2>
+
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 w-full max-w-5xl">
+
+            <div className="flex flex-col items-end">
+            <Match
+                team1={match1.team1}
+                team2={match1.team2}
+                onPickTeam1={() => setWinner1(match1.team1)}
+                onPickTeam2={() => setWinner1(match1.team2)}
+            />
+
+            <p className="text-sm mt-2">SF1</p>
             </div>
-            {bracketWinner && (
-                <div className="mt-4 p-3 rounded-xl animate-pulse bg-yellow-200">
-                    <h3 className="font-bold">Bracket Winner:</h3>
-                    <p>{bracketWinner.name}</p>
+
+            <div className="flex flex-col items-center">
+            <div className="text-center font-bold text-lg mb-2">FINAL</div>
+
+            <Match
+                team1={winner1 ?? { name: "TBD", flag: "" }}
+                team2={winner2 ?? { name: "TBD", flag: "" }}
+                onPickTeam1={() => winner1 && setFinalWinner(winner1)}
+                onPickTeam2={() => winner2 && setFinalWinner(winner2)}
+            />
+
+            {finalWinner && (
+                <div className="mt-2 px-4 py-1 bg-yellow-300 rounded-lg font-semibold">
+                {finalWinner.name} selected
                 </div>
             )}
+            </div>
+
+            <div className="flex flex-col items-start">
+            <Match
+                team1={match2.team1}
+                team2={match2.team2}
+                onPickTeam1={() => setWinner2(match2.team1)}
+                onPickTeam2={() => setWinner2(match2.team2)}
+            />
+
+            <p className="text-sm mt-2">SF2</p>
+            </div>
         </div>
+
+        {finalWinner && (
+            <div className="mt-6 p-3 bg-green-200 rounded-lg font-bold text-lg">
+            Winner of this Path: {finalWinner.name}
+            </div>
+        )}
+        </div>
+        </>
+
     );
 }
+
