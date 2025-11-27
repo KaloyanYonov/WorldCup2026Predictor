@@ -3,13 +3,12 @@ import Header from "../components/Header"
 
 export default function MainPage(){
     return(
-        <div className="grid">
-            <Header/>
+        <>
+        <Header/>
+        <div className="grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
             <h1>Welcome to the official World Cup 2026 predictor !</h1>
-            <RedirectButton to="/GroupStage" text="Group Stage"/>
-            <RedirectButton to="/IntercontinentalPlayoffs" text="Intercontinental Playoffs"/>
-            <RedirectButton to="/EuropeanPlayoffs" text="European Playoffs"/>
-
+            <RedirectButton to="/GroupStage" text="Get started"/>
         </div>
+        </>
     )
 }

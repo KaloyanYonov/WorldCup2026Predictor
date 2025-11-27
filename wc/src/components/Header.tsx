@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import RedirectButton from "./RedirectButton";
 
 export default function Header() {
   return (
     <header
       className="
         fixed top-0 left-0 w-full
-        bg-gray-300 backdrop-blur-md
+        bg-[#fbf6ef] backdrop-blur-md
         border-b border-gray-200
         z-50
       "
@@ -15,44 +15,16 @@ export default function Header() {
           max-w-5xl mx-auto
           flex items-center justify-center
           gap-8
-          py-2
+          py-3
         "
       >
-        <Link
-          to="/"
-          className="
-            text-gray-700 
-            hover:text-blue-500 
-            transition-colors
-            text-sm font-medium
-          "
-        >
-          Main Page
-        </Link>
+        <RedirectButton to="/" text="Main Page"/>
+        <RedirectButton to="/GroupStage" text="Group Stage"/>
+        <RedirectButton to="/EuropeanPlayoffs" text="European Playoffs"/>
+        <RedirectButton to="/intercontinentalPlayoffs" text="Intercontinental Playoffs"/>
 
-        <Link
-          to="/EuropeanPlayoffs"
-          className="
-            text-gray-700 
-            hover:text-blue-500 
-            transition-colors
-            text-sm font-medium
-          "
-        >
-          European Playoffs
-        </Link>
 
-        <Link
-          to="/IntercontinentalPlayoffs"
-          className="
-            text-gray-700 
-            hover:text-blue-500 
-            transition-colors
-            text-sm font-medium
-          "
-        >
-          Intercontinental Playoffs
-        </Link>
+        
       </nav>
     </header>
   );

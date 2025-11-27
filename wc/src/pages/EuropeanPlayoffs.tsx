@@ -1,8 +1,11 @@
 import Bracket from "../components/Bracket";
+import Header from "../components/Header";
 
 export default function EuropeanPlayoffs() {
   return (
-    <div className="flex">
+    <>
+    <Header/>
+    <div className="flex opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
 
       <h1>European Playoffs</h1>
       <h1>Path A</h1>
@@ -53,5 +56,6 @@ export default function EuropeanPlayoffs() {
         }}
       />
     </div>
+    </>
   );
 }
