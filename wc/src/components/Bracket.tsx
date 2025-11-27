@@ -43,11 +43,8 @@ export default function Bracket({ match1, match2 }: BracketProps) {
                 onPickTeam2={() => winner2 && setFinalWinner(winner2)}
             />
 
-            {finalWinner && (
-                <div className="mt-2 px-4 py-1 bg-yellow-300 rounded-lg font-semibold">
-                {finalWinner.name} selected
-                </div>
-            )}
+                
+            
             </div>
 
             <div className="flex flex-col items-start">

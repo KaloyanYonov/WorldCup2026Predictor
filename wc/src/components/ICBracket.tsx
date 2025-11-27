@@ -51,11 +51,11 @@ export default function IntercontinentalBracket({
         
       </div>
 
-      {finalWinner && (
+      {finalWinner && playInWinner ? (
         <div className="mt-6 p-3 bg-green-200 ml-150 rounded-lg font-bold text-lg">
-          Winner of this Path: {finalWinner.name}
+          Winner of this Path: {finalWinner.name} 
         </div>
-      )}
+      ) : <p>Plase select a winner in the semifinal before proceeding.</p>} 
     </div>
   );
 }
