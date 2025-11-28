@@ -14,8 +14,8 @@ export default function Header() {
         className="
           max-w-5xl mx-auto
           flex items-center justify-center
-          gap-8
-          py-3
+          gap-4
+          py-1
         "
       >
         <RedirectButton to="/" text="Main Page"/>
