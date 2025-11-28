@@ -16,7 +16,7 @@ export default function Bracket({ name ,match1, match2 }: BracketProps) {
   return (
     <>
 
-        <div className="flex flex-col bg-[#ead7c3] items-center my-10">
+        <div className="flex flex-col rounded-lg p-6 bg-[#ead7c3] items-center my-10">
         <h2 className="font-bold text-lg mb-4">Path {name}</h2>
 
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 w-full max-w-5xl">
