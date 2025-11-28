@@ -7,7 +7,7 @@ export default function EuropeanPlayoffs() {
     <Header/>
     <div className="grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] pt-30 pb-25">
 
-      <h1>European Playoffs</h1>
+      <h1 className="font-bold text-3xl">European Playoffs</h1>
       <Bracket
         name="A"
         match1={{

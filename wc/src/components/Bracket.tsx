@@ -16,7 +16,7 @@ export default function Bracket({ name ,match1, match2 }: BracketProps) {
   return (
     <>
 
-        <div className="flex flex-col items-center my-10">
+        <div className="flex flex-col bg-[#ead7c3] items-center my-10">
         <h2 className="font-bold text-lg mb-4">Path {name}</h2>
 
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 w-full max-w-5xl">
@@ -29,7 +29,6 @@ export default function Bracket({ name ,match1, match2 }: BracketProps) {
                 onPickTeam2={() => setWinner1(match1.team2)}
             />
 
-            <p className="text-sm mt-2">SF1</p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -54,13 +53,13 @@ export default function Bracket({ name ,match1, match2 }: BracketProps) {
                 onPickTeam2={() => setWinner2(match2.team2)}
             />
 
-            <p className="text-sm mt-2">SF2</p>
             </div>
         </div>
 
         {finalWinner && (
-            <div className="mt-6 p-3 bg-green-200 rounded-lg font-bold text-lg">
-            Winner of this Path: {finalWinner.name}
+            <div className="mt-2 p-2 bg-transparent rounded-lg text-center font-bold text-sm">
+            Winner of this Path: {<img src={finalWinner.flag} alt="" className="w-25 pt-3 mx-auto"/>}
+            <p className="text-center p-4">{finalWinner.name}</p>
             </div>
         )}
         </div>

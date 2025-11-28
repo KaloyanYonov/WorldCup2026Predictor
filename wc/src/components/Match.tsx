@@ -10,7 +10,7 @@ export type matchProps = {
 
 export default function Match({ team1, team2, onPickTeam1, onPickTeam2 }: matchProps) {
     return (
-        <div className="flex flex-col gap-4 p-4 border rounded-lg bg-white">
+        <div className="flex flex-col gap-4 p-10 bg-transparent">
             <button onClick={onPickTeam1} className="active:scale-95 transition-transform">
                 <Team {...team1} />
             </button>
