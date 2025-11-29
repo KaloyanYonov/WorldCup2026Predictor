@@ -22,30 +22,37 @@ export default function IntercontinentalBracket({
 
   function handleFinalPick(team: teamProps) {
     if (!playInWinner) {
-      setError("Please select a semifinal winner first.");
+      setError("Please select the play-in winner first.");
       return;
     }
-
     setError("");
-    onFinalWinner(team); 
+    onFinalWinner(team);
   }
 
   return (
     <div className="flex flex-col rounded-lg p-6 bg-[#fbf6ef] items-center my-10">
       <h2 className="font-bold text-lg mb-7">Pathway {name}</h2>
 
-      <div className="grid grid-cols-3 items-center gap-6 w-full max-w-4xl">
-        <div className="flex flex-col items-end">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 w-full max-w-4xl">
+        <div className="relative flex flex-col items-end">
+
           <Match
             team1={playInMatch.team1}
             team2={playInMatch.team2}
             onPickTeam1={() => { setPlayInWinner(playInMatch.team1); setError(""); }}
             onPickTeam2={() => { setPlayInWinner(playInMatch.team2); setError(""); }}
           />
+
+          <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-black"></div>
+          <div className="absolute right-0 bottom-[33%] w-[30px] h-[3px] bg-black"></div>
+          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-black"></div>
+
+          <div className="absolute right-[-60px] top-1/2 w-[60px] h-[2px] bg-black"></div>
         </div>
 
-        <div className="flex flex-col items-center">
-          <div className="text-center font-bold text-lg mb-2">Final</div>
+
+        <div className="relative flex flex-col items-center mx-7 my-6 mb-11">
+          <div className="text-center text-lg">Final</div>
 
           <Match
             team1={playInWinner ?? { name: "TBD", flag: "" }}
@@ -53,8 +60,13 @@ export default function IntercontinentalBracket({
             onPickTeam1={() => playInWinner && handleFinalPick(playInWinner)}
             onPickTeam2={() => handleFinalPick(seededTeam)}
           />
+
+
         </div>
-      </div>
+
+
+        </div>
+
 
       {finalWinner ? (
         <div className="mt-6 p-2 rounded-lg font-bold text-lg">

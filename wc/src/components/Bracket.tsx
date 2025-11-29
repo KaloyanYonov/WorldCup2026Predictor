@@ -6,8 +6,8 @@ type BracketProps = {
   name: string;
   match1: { team1: teamProps; team2: teamProps };
   match2: { team1: teamProps; team2: teamProps };
-  finalWinner: teamProps | null;         
-  onFinalWinner: (team: teamProps | null) => void; 
+  finalWinner: teamProps | null;
+  onFinalWinner: (team: teamProps | null) => void;
 };
 
 export default function Bracket({ name, match1, match2, finalWinner, onFinalWinner }: BracketProps) {
@@ -20,22 +20,30 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
   }
 
   return (
-    <div className="flex flex-col rounded-lg p-6 bg-[#fbf6ef] items-center my-10">
+    <div className="flex flex-col rounded-lg p-5 bg-[#fbf6ef] items-center my-5">
       <h2 className="font-bold text-lg mb-4">Path {name}</h2>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 w-full max-w-5xl">
 
-        <div className="flex flex-col items-end">
+        <div className="relative flex flex-col items-end">
+
           <Match
             team1={match1.team1}
             team2={match1.team2}
             onPickTeam1={() => setWinner1(match1.team1)}
             onPickTeam2={() => setWinner1(match1.team2)}
           />
+          <div className="absolute right-0 top-[33%] h-[3px] w-[30px] bg-black"></div>
+          <div className="absolute right-0 bottom-[33%] h-[3px] w-[30px] bg-black"></div>
+          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-black"></div>
+
+          <div className="absolute right-[-70px] top-1/2 h-[3px] w-[70px] bg-black"></div>
+
         </div>
 
-        <div className="flex flex-col items-center">
-          <div className="text-center font-bold text-lg mb-2">FINAL</div>
+        <div className="flex flex-col items-center relative m-7 mb-15">
+
+          <div className="text-center text-lg">Final</div>
 
           <Match
             team1={winner1 ?? { name: "TBD", flag: "" }}
@@ -45,14 +53,24 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
           />
         </div>
 
-        <div className="flex flex-col items-start">
+
+        <div className="relative flex flex-col items-start">
           <Match
             team1={match2.team1}
             team2={match2.team2}
             onPickTeam1={() => setWinner2(match2.team1)}
             onPickTeam2={() => setWinner2(match2.team2)}
           />
+
+          <div className="absolute left-0 top-[33%] h-[3px] w-[30px] bg-black"></div>
+          <div className="absolute left-0 bottom-[33%] h-[3px] w-[30px] bg-black"></div>
+
+          <div className="absolute left-0 top-[33%] h-[33%] w-[2px] bg-black"></div>
+
+          <div className="absolute left-[-70px] top-1/2 h-[3px] w-[70px] bg-black"></div>
+
         </div>
+
       </div>
 
       {finalWinner && (
