@@ -1,7 +1,38 @@
 import Bracket from "../components/Bracket";
 import Header from "../components/Header";
+import { useState } from "react";
+import type { teamProps } from "../components/Team";
+import ClearButton from "../components/ClearButton";
+import SetButton from "../components/SetButton";
 
 export default function EuropeanPlayoffs() {
+
+  const [winnerA, setWinnerA] = useState<teamProps | null>(null);
+  const [winnerB, setWinnerB] = useState<teamProps | null>(null);
+  const [winnerC, setWinnerC] = useState<teamProps | null>(null);
+  const [winnerD, setWinnerD] = useState<teamProps | null>(null);
+
+  function handleSet() {
+    localStorage.setItem("winnerA", JSON.stringify(winnerA));
+    localStorage.setItem("winnerB", JSON.stringify(winnerB));
+    localStorage.setItem("winnerC", JSON.stringify(winnerC));
+    localStorage.setItem("winnerD", JSON.stringify(winnerD));
+  }
+
+  function handleClear() {
+    setWinnerA(null);
+    setWinnerB(null);
+    setWinnerC(null);
+    setWinnerD(null);
+
+    localStorage.removeItem("winnerA");
+    localStorage.removeItem("winnerB");
+    localStorage.removeItem("winnerC");
+    localStorage.removeItem("winnerD");
+  }
+
+
+
   return (
     <>
     <Header/>
@@ -18,6 +49,8 @@ export default function EuropeanPlayoffs() {
           team1: { name: "Wales", flag: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Flag_of_Wales.svg"},
           team2: { name: "Bosnia and Herzegovina", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/1200px-Flag_of_Bosnia_and_Herzegovina.svg.png"},
         }}
+        finalWinner={winnerA}
+        onFinalWinner={setWinnerA}
       />
 
       <Bracket
@@ -30,6 +63,8 @@ export default function EuropeanPlayoffs() {
           team1: { name: "Poland", flag: "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1200px-Flag_of_Poland.svg.png"},
           team2: { name: "Albania", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/1200px-Flag_of_Albania.svg.png"},
         }}
+        finalWinner={winnerB}
+        onFinalWinner={setWinnerB}
       />
       <Bracket
         name="C"
@@ -41,6 +76,8 @@ export default function EuropeanPlayoffs() {
           team1: { name: "Slovakia", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/1200px-Flag_of_Slovakia.svg.png"},
           team2: { name: "Kosovo", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Kosovo.svg/2560px-Flag_of_Kosovo.svg.png"},
         }}
+        finalWinner={winnerC}
+        onFinalWinner={setWinnerC}
       />
       <Bracket
         name="D"
@@ -52,7 +89,13 @@ export default function EuropeanPlayoffs() {
           team1: { name: "Czech Republic", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/1200px-Flag_of_the_Czech_Republic.svg.png"},
           team2: { name: "Republic of Ireland", flag: "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg"},
         }}
+        finalWinner={winnerD}
+        onFinalWinner={setWinnerD}
       />
+      <div className="flex justify-center gap-6 mt-10">
+        <ClearButton onClear={handleClear}/>
+        <SetButton onSet={handleSet}/>
+      </div>
     </div>
     </>
   );
