@@ -55,7 +55,7 @@ export default function IntercontinentalBracket({
           <div className="text-center text-lg">Final</div>
 
           <Match
-            team1={playInWinner ?? { name: "TBD", flag: "" }}
+            team1={playInWinner ?? { name: "TBD", flag: "https://t3.ftcdn.net/jpg/06/16/17/88/360_F_616178830_rySDz4kA4m5l7tiWta1O0qLAFhFqw2eS.jpg" }}
             team2={seededTeam}
             onPickTeam1={() => playInWinner && handleFinalPick(playInWinner)}
             onPickTeam2={() => handleFinalPick(seededTeam)}

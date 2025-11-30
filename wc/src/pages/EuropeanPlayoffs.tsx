@@ -65,7 +65,7 @@ export default function EuropeanPlayoffs() {
       <Header />
       <div className="grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] pt-30 pb-25">
 
-        <h1 className="font-bold text-3xl">European Playoffs</h1>
+        <h1 className="font-bold text-3xl pb-6 pt-6">European Playoffs</h1>
         <Bracket
           name="A"
           match1={{
@@ -119,7 +119,7 @@ export default function EuropeanPlayoffs() {
           finalWinner={winnerD}
           onFinalWinner={setWinnerD}
         />
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10 gap-15">
           <ClearButton onClear={handleClear} />
           <SetButton onSet={handleSet} />
         </div>
@@ -141,7 +141,7 @@ export default function EuropeanPlayoffs() {
                 ))}
               </div>
 
-              <div className="flex justify-between mt-4 gap-15">
+              <div className="flex justify-between mt-4">
                 
                 <CancelButton onCancel={cancelSave}/>
                 <ConfirmButton onConfirm={confirmSave}/>

@@ -47,9 +47,9 @@ export default function IntercontinentalPlayoffs() {
   return (
     <>
       <Header />
-      <div className="pt-25 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] items-center p-6">
+      <div className="pt-25 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] items-center">
 
-        <h1 className="font-bold text-3xl p-6">Intercontinental Playoffs</h1>
+        <h1 className="font-bold text-3xl pb-6 pt-12">Intercontinental Playoffs</h1>
 
         <div className="mt-10 space-y-12">
 

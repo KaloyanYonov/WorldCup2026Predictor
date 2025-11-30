@@ -1,14 +1,24 @@
-import RedirectButton from "../components/RedirectButton"
-import Header from "../components/Header"
+import RedirectButton from "../components/RedirectButton";
+import Header from "../components/Header";
 
-export default function MainPage(){
-    return(
-        <>
-        <Header/>
-        <div className="grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
-            <h1>Welcome to the official World Cup 2026 predictor !</h1>
-            <RedirectButton to="/GroupStage" text="Get started"/>
+export default function MainPage() {
+  return (
+    <>
+      <Header />
+
+      <div className="relative w-full min-h-screen flex items-center justify-center bg-[#dce0d9] overflow-hidden">
+
+        <img
+          src="" // can't find a suitable image yet
+          className="absolute inset-0 w-full h-full opacity-70"
+        />
+
+        <div className="relative z-10 grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
+          <h1 className="text-3xl font-bold mb-6">Welcome to the official World Cup 2026 predictor!</h1>
+          <RedirectButton to="/GroupStage" text="Get started" />
         </div>
-        </>
-    )
+
+      </div>
+    </>
+  );
 }

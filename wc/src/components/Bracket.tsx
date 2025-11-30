@@ -46,8 +46,8 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
           <div className="text-center text-lg">Final</div>
 
           <Match
-            team1={winner1 ?? { name: "TBD", flag: "" }}
-            team2={winner2 ?? { name: "TBD", flag: "" }}
+            team1={winner1 ?? { name: "TBD", flag: "https://t3.ftcdn.net/jpg/06/16/17/88/360_F_616178830_rySDz4kA4m5l7tiWta1O0qLAFhFqw2eS.jpg" }}
+            team2={winner2 ?? { name: "TBD", flag: "https://t3.ftcdn.net/jpg/06/16/17/88/360_F_616178830_rySDz4kA4m5l7tiWta1O0qLAFhFqw2eS.jpg" }}
             onPickTeam1={() => winner1 && handleFinalPick(winner1)}
             onPickTeam2={() => winner2 && handleFinalPick(winner2)}
           />
