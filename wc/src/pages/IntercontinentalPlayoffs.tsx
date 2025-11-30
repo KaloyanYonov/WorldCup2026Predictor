@@ -91,7 +91,7 @@ export default function IntercontinentalPlayoffs() {
         </div>
       </div>
       {areTeamsSelected && (
-        <div className="fixed inset-0 bg-[#dce0d9] animate-[fadeIn_0.4s_ease-out_forwards] bg-opacity-40 flex items-center justify-center z-40">
+        <div className="fixed inset-0 bg-[#edf5fc] animate-[fadeIn_0.4s_ease-out_forwards] bg-opacity-40 flex items-center justify-center z-40">
           <div className="bg-white rounded-lg p-6 w-[350px] shadow-xl">
 
             <h2 className="text-xl font-bold mb-4 text-center">
