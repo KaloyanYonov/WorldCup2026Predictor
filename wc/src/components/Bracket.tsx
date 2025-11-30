@@ -20,7 +20,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
   }
 
   return (
-    <div className="flex flex-col rounded-lg p-5 bg-[#fbf6ef] items-center my-5">
+    <div className="flex flex-col rounded-lg p-5 bg-[#f8fafc] items-center my-5">
       <h2 className="font-bold text-lg mb-4">Path {name}</h2>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-5xl">

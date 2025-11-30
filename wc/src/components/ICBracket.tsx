@@ -30,7 +30,7 @@ export default function IntercontinentalBracket({
   }
 
   return (
-    <div className="flex flex-col rounded-lg p-6 bg-[#fbf6ef] items-center my-10">
+    <div className="flex flex-col rounded-lg p-6 bg-[#f8fafc] items-center my-10">
       <h2 className="font-bold text-lg mb-7">Pathway {name}</h2>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full">

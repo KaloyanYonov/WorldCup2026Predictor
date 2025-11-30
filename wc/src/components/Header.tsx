@@ -5,7 +5,7 @@ export default function Header() {
     <header
       className="
         fixed top-0 left-0 w-full
-        bg-[#fbf6ef] backdrop-blur-md
+        bg-[#f3f7fa] backdrop-blur-md
         border-b border-gray-200
         z-50
       "

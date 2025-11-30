@@ -6,7 +6,7 @@ export default function MainPage() {
     <>
       <Header />
 
-      <div className="relative w-full min-h-screen flex items-center justify-center bg-[#dce0d9] overflow-hidden">
+      <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
 
         <img
           src="" // can't find a suitable image yet
