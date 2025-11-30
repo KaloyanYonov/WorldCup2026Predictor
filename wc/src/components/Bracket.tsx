@@ -23,7 +23,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
     <div className="flex flex-col rounded-lg p-5 bg-[#fbf6ef] items-center my-5">
       <h2 className="font-bold text-lg mb-4">Path {name}</h2>
 
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 w-full max-w-5xl">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-5xl">
 
         <div className="relative flex flex-col items-end">
 
@@ -41,7 +41,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
 
         </div>
 
-        <div className="flex flex-col items-center relative m-7 mb-15">
+        <div className="flex flex-col items-center relative m-7 mb-14">
 
           <div className="text-center text-lg">Final</div>
 
@@ -74,7 +74,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
       </div>
 
       {finalWinner && (
-        <div className="mt-2 p-2 bg-transparent rounded-lg text-center font-bold text-sm">
+        <div className="p-2 bg-transparent rounded-lg text-center font-bold text-sm">
           <p>Winner of Path {name}</p>
           <img src={finalWinner.flag} className="w-20 mx-auto pt-3" />
           <p className="text-center p-4">{finalWinner.name}</p>

@@ -119,7 +119,7 @@ export default function EuropeanPlayoffs() {
           finalWinner={winnerD}
           onFinalWinner={setWinnerD}
         />
-        <div className="flex justify-center gap-6 mt-10">
+        <div className="flex justify-center mt-10">
           <ClearButton onClear={handleClear} />
           <SetButton onSet={handleSet} />
         </div>
@@ -141,7 +141,7 @@ export default function EuropeanPlayoffs() {
                 ))}
               </div>
 
-              <div className="flex justify-between mt-4">
+              <div className="flex justify-between mt-4 gap-15">
                 
                 <CancelButton onCancel={cancelSave}/>
                 <ConfirmButton onConfirm={confirmSave}/>
