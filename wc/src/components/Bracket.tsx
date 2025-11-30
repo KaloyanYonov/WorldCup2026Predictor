@@ -33,11 +33,11 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             onPickTeam1={() => setWinner1(match1.team1)}
             onPickTeam2={() => setWinner1(match1.team2)}
           />
-          <div className="absolute right-0 top-[33%] h-[3px] w-[30px] bg-black"></div>
-          <div className="absolute right-0 bottom-[33%] h-[3px] w-[30px] bg-black"></div>
-          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-black"></div>
+          <div className="absolute right-0 top-[33%] h-[3px] w-[30px] bg-gray-300"></div>
+          <div className="absolute right-0 bottom-[33%] h-[3px] w-[30px] bg-gray-300"></div>
+          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-300"></div>
 
-          <div className="absolute right-[-70px] top-1/2 h-[3px] w-[70px] bg-black"></div>
+          <div className="absolute right-[-70px] top-1/2 h-[3px] w-[70px] bg-gray-300"></div>
 
         </div>
 
@@ -62,21 +62,21 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             onPickTeam2={() => setWinner2(match2.team2)}
           />
 
-          <div className="absolute left-0 top-[33%] h-[3px] w-[30px] bg-black"></div>
-          <div className="absolute left-0 bottom-[33%] h-[3px] w-[30px] bg-black"></div>
+          <div className="absolute left-0 top-[33%] h-[3px] w-[30px] bg-gray-300"></div>
+          <div className="absolute left-0 bottom-[33%] h-[3px] w-[30px] bg-gray-300"></div>
 
-          <div className="absolute left-0 top-[33%] h-[33%] w-[2px] bg-black"></div>
+          <div className="absolute left-0 top-[33%] h-[33%] w-[2px] bg-gray-300"></div>
 
-          <div className="absolute left-[-70px] top-1/2 h-[3px] w-[70px] bg-black"></div>
+          <div className="absolute left-[-70px] top-1/2 h-[3px] w-[70px] bg-gray-300"></div>
 
         </div>
 
       </div>
 
       {finalWinner && (
-        <div className="p-2 bg-transparent rounded-lg text-center font-bold text-sm">
+        <div className="p-2 bg-transparent rounded-lg text-center font-bold ">
           <p>Winner of Path {name}</p>
-          <img src={finalWinner.flag} className="w-20 mx-auto pt-3" />
+          <img src={finalWinner.flag} className="w-25 mx-auto pt-3" />
           <p className="text-center p-4">{finalWinner.name}</p>
         </div>
       )}

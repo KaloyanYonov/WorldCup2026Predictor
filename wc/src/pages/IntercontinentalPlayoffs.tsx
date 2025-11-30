@@ -49,7 +49,7 @@ export default function IntercontinentalPlayoffs() {
       <Header />
       <div className="pt-25 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] items-center">
 
-        <h1 className="font-bold text-3xl pb-6 pt-12">Intercontinental Playoffs</h1>
+        <h1 className="font-bold text-3xl pb-3 pt-12">Intercontinental Playoffs</h1>
 
         <div className="mt-10 space-y-12">
 
@@ -91,11 +91,11 @@ export default function IntercontinentalPlayoffs() {
         </div>
       </div>
       {areTeamsSelected && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-[#dce0d9] animate-[fadeIn_0.4s_ease-out_forwards] bg-opacity-40 flex items-center justify-center z-40">
           <div className="bg-white rounded-lg p-6 w-[350px] shadow-xl">
 
             <h2 className="text-xl font-bold mb-4 text-center">
-              Confirm your picks
+              Confirm your final picks.
             </h2>
 
             <div className="space-y-3 mb-5">

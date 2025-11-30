@@ -13,8 +13,8 @@ export default function MainPage() {
           className="absolute inset-0 w-full h-full opacity-70"
         />
 
-        <div className="relative z-10 grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
-          <h1 className="text-3xl font-bold mb-6">Welcome to the official World Cup 2026 predictor!</h1>
+        <div className="relative grid opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
+          <h1 className="font-bold mb-6">Welcome to the official World Cup 2026 predictor!</h1>
           <RedirectButton to="/GroupStage" text="Get started" />
         </div>
 

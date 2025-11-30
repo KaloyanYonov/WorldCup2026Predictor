@@ -43,11 +43,11 @@ export default function IntercontinentalBracket({
             onPickTeam2={() => { setPlayInWinner(playInMatch.team2); setError(""); }}
           />
 
-          <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-black"></div>
-          <div className="absolute right-0 bottom-[33%] w-[30px] h-[3px] bg-black"></div>
-          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-black"></div>
+          <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-gray-300"></div>
+          <div className="absolute right-0 bottom-[33%] w-[30px] h-[3px] bg-gray-300"></div>
+          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-300"></div>
 
-          <div className="absolute right-[-60px] top-1/2 w-[60px] h-[2px] bg-black"></div>
+          <div className="absolute right-[-60px] top-1/2 w-[60px] h-[2px] bg-gray-300"></div>
         </div>
 
 
@@ -71,7 +71,7 @@ export default function IntercontinentalBracket({
       {finalWinner ? (
         <div className="mt-6 p-2 rounded-lg font-bold text-lg">
           <p className="text-center">Winner of this Path:</p>
-          <img src={finalWinner.flag} className="w-30 pt-3 h-auto mx-auto" />
+          <img src={finalWinner.flag} className="w-25 pt-3 h-auto mx-auto" />
           <p className="text-center p-4">{finalWinner.name}</p>
         </div>
       ) : (
