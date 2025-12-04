@@ -3,6 +3,7 @@ export type teamProps = {
     name: string;
     flag : string;
     confederation? : string;
+    
 }
 
 export default function Team({name,flag,confederation} : teamProps){
