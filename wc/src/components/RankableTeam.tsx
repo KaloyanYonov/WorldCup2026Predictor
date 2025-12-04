@@ -26,8 +26,8 @@ export default function RankableTeam({
               transition-all duration-200
               ${
                 selectedRank === rank
-                  ? "bg-blue-600 text-white border-blue-600"
-                  : "bg-gray-100 hover:bg-blue-200"
+                  ? "bg-yellow-600 text-white border-blue-600"
+                  : "bg-silver-400 hover:bg-blue-200"
               }
             `}
           >
