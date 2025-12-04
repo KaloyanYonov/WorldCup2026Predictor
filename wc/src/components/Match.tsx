@@ -11,12 +11,19 @@ export type matchProps = {
 export default function Match({ team1, team2, onPickTeam1, onPickTeam2 }: matchProps) {
     return (
         <div className="flex flex-col gap-4 p-10 bg-transparent">
+
             <button onClick={onPickTeam1} className="active:scale-95 transition-transform">
-                <Team {...team1} />
+                <div className="border border-double rounded p-2 bg-white">
+                    <Team {...team1} />
+                </div>
             </button>
+
             <button onClick={onPickTeam2} className="active:scale-95 transition-transform">
-                <Team {...team2} />
+                <div className="border border-double rounded p-2 bg-white">
+                    <Team {...team2} />
+                </div>
             </button>
+
         </div>
     );
 }

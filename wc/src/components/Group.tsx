@@ -27,7 +27,7 @@ export default function Group({ name, teams }: groupProps) {
   }
 
   return (
-    <div className="p-4 border rounded-lg bg-white shadow">
+    <div className="p-4 border rounded-lg bg-[#e8f1f7] shadow">
       <h2 className="font-bold text-xl mb-5">Group {name}</h2>
 
       <div className="flex flex-col gap-3">

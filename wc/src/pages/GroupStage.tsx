@@ -6,7 +6,7 @@ export default function GroupStage() {
     <div className="p-10 flex w-full items-center justify-center">
       <Header />
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 pt-40 pb-20 gap-7 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-40 pb-20 gap-7 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
 
         <Group 
           name="A"
