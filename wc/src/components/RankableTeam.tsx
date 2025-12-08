@@ -20,7 +20,7 @@ export default function RankableTeam({
   onSelectRank,
 }: RankableTeamProps) {
   return (
-    <div className="flex bg-[#1B1B1B] items-center justify-between p-2 border rounded shadow-sm">
+    <div className="flex bg-[#1b1b1b] items-center justify-between p-2 border border-yellow-100 rounded shadow-sm">
       <Team {...team}/>
 
       <div className="flex gap-2 ml-4">
@@ -32,8 +32,8 @@ export default function RankableTeam({
               key={rank}
               onClick={() => onSelectRank(rank)}
               className={`
-                w-8 h-8 flex items-center justify-center rounded-full border text-sm transition-all duration-200
-                ${isSelected ? rankColors[rank] : "bg-gray-100 hover:bg-gray-200"}
+                w-8 h-8 flex items-center justify-center rounded border-yellow-100 border text-sm transition-all duration-200
+                ${isSelected ? rankColors[rank] : "bg-[#1b1b1b] hover:bg-[#111111]"}
               `}
             >
               {rank}
