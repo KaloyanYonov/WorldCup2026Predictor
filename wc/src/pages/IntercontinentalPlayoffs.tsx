@@ -26,10 +26,17 @@ export default function IntercontinentalPlayoffs() {
   }
 
   function confirmSave() {
-    localStorage.setItem("path1Winner", JSON.stringify(path1Winner));
-    localStorage.setItem("path2Winner", JSON.stringify(path2Winner));
+    localStorage.setItem("path1Winner", JSON.stringify({
+      name: path1Winner!.name,
+      flag: path1Winner!.flag
+    }));
+    localStorage.setItem("path2Winner", JSON.stringify({
+      name: path2Winner!.name,
+      flag: path2Winner!.flag
+    }));
     setAreTeamsSelected(false);
   }
+
 
   function cancelSave() {
     setAreTeamsSelected(false);
