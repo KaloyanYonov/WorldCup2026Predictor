@@ -28,7 +28,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
       <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-5xl">
 
         <div className="relative flex flex-col items-end">
-
+        
           <Match
             team1={match1.team1}
             team2={match1.team2}
