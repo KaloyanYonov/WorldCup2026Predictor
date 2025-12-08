@@ -33,7 +33,7 @@ export default function RankableTeam({
               onClick={() => onSelectRank(rank)}
               className={`
                 w-8 h-8 flex items-center justify-center rounded border-yellow-100 border text-sm transition-all duration-200
-                ${isSelected ? rankColors[rank] : "bg-[#1b1b1b] hover:bg-[#111111]"}
+                ${isSelected ? rankColors[rank] : "bg-[#1b1b1b] hover:bg-[#343434]"}
               `}
             >
               {rank}

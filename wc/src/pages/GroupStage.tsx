@@ -18,6 +18,7 @@ export default function GroupStage() {
     function load(key: string): teamProps | null {
       const raw = localStorage.getItem(key);
       return raw ? JSON.parse(raw) : null;
+      
     }
 
     const A = load("winnerA");
@@ -26,6 +27,8 @@ export default function GroupStage() {
     const D = load("winnerD");
     const P1 = load("path1Winner");
     const P2 = load("path2Winner");
+
+    
 
     setWinnerA(A);
     setWinnerB(B);
@@ -65,7 +68,7 @@ export default function GroupStage() {
             { name: "Canada", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1200px-Flag_of_Canada_%28Pantone%29.svg.png" },
             winnerA ?? { name: "", flag: "" },
             { name: "Qatar", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/1200px-Flag_of_Qatar.svg.png" },
-            { name: "Switzerland", flag: "https://cdn.britannica.com/43/4543-050-5A18E5A3/Flag-Switzerland.jpg" },
+            { name: "Switzerland", flag: "https://st2.depositphotos.com/1007997/5889/v/950/depositphotos_58894729-stock-illustration-switzerland-flag-vector.jpg" },
 
           ]} />
           <Group name="C" teams={[
