@@ -1,6 +1,6 @@
 import Bracket from "../components/Bracket";
 import Header from "../components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { teamProps } from "../components/Team";
 import ClearButton from "../components/ClearButton";
 import SetButton from "../components/SetButton";
@@ -28,7 +28,7 @@ export default function EuropeanPlayoffs() {
     const finalWinners = [winnerA, winnerB, winnerC, winnerD];
 
     setWinnersList(finalWinners);
-    setAreTeamsSelected(true); 
+    setAreTeamsSelected(true);
   }
 
 
@@ -57,6 +57,17 @@ export default function EuropeanPlayoffs() {
     setAreTeamsSelected(false);
   }
 
+  useEffect(() => {
+    const A = localStorage.getItem("winnerA");
+    const B = localStorage.getItem("winnerB");
+    const C = localStorage.getItem("winnerC");
+    const D = localStorage.getItem("winnerD");
+
+    if (A) setWinnerA(JSON.parse(A));
+    if (B) setWinnerB(JSON.parse(B));
+    if (C) setWinnerC(JSON.parse(C));
+    if (D) setWinnerD(JSON.parse(D));
+  }, []);
 
 
 
@@ -119,7 +130,7 @@ export default function EuropeanPlayoffs() {
           finalWinner={winnerD}
           onFinalWinner={setWinnerD}
         />
-      
+
         <div className="flex justify-end mt-10 gap-15">
           <ClearButton onClear={handleClear} />
           <SetButton onSet={handleSet} />
@@ -143,10 +154,10 @@ export default function EuropeanPlayoffs() {
               </div>
 
               <div className="flex justify-between mt-4">
-                
-                <CancelButton onCancel={cancelSave}/>
-                <ConfirmButton onConfirm={confirmSave}/>
-                
+
+                <CancelButton onCancel={cancelSave} />
+                <ConfirmButton onConfirm={confirmSave} />
+
               </div>
 
             </div>

@@ -2,7 +2,7 @@ import IntercontinentalBracket from "../components/ICBracket";
 import Header from "../components/Header";
 import SetButton from "../components/SetButton";
 import ClearButton from "../components/ClearButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { teamProps } from "../components/Team";
 import CancelButton from "../components/CancelButton";
 import ConfirmButton from "../components/ConfirmButton";
@@ -42,6 +42,15 @@ export default function IntercontinentalPlayoffs() {
     localStorage.removeItem("path1Winner");
     localStorage.removeItem("path2Winner");
   }
+
+  useEffect(() => {
+    const p1 = localStorage.getItem("path1Winner");
+    const p2 = localStorage.getItem("path2Winner");
+
+    if (p1) setPath1Winner(JSON.parse(p1));
+    if (p2) setPath2Winner(JSON.parse(p2));
+  }, []);
+
 
 
   return (
