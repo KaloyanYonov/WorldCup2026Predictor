@@ -49,11 +49,11 @@ export default function GroupStage() {
   return (
 
 
-    <div className="p-10 flex w-full items-center justify-center">
+    <div className="pl-5 pr-5flex w-full items-center justify-center">
       <Header />
 
       {!ready ? 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center animate-[fadeIn_0.4s_ease-out_forwards]">
           <p className="text-white flex items-center justify-center m-10 text-3xl">Please complete the European and Intercontinenal playoffs first.
           </p> 
           <div className="flex">

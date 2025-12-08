@@ -76,7 +76,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
       </div>
 
       {finalWinner && (
-        <div className="p-2 bg-transparent rounded-lg text-center font-bold ">
+        <div className="p-2 bg-transparent animate-[fadeIn_0.4s_ease-out_forwards] rounded-lg text-center font-bold ">
           <p>Winner of Path {name}</p>
           <img src={finalWinner.flag} className="w-25 mx-auto pt-3" />
           <p className="text-center p-4">{finalWinner.name}</p>

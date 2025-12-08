@@ -69,7 +69,7 @@ export default function IntercontinentalBracket({
 
 
       {finalWinner ? (
-        <div className="mt-6 p-2 rounded-lg font-bold text-lg">
+        <div className="mt-6 p-2 rounded-lg animate-[fadeIn_0.4s_ease-out_forwards] font-bold text-lg">
           <p className="text-center">Winner of this Path:</p>
           <img src={finalWinner.flag} className="w-25 pt-3 h-auto mx-auto" />
           <p className="text-center p-4">{finalWinner.name}</p>
