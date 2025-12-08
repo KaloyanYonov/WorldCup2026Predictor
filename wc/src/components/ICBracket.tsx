@@ -30,7 +30,7 @@ export default function IntercontinentalBracket({
   }
 
   return (
-    <div className="flex flex-col rounded-lg p-6 bg-[#e8f1f7] items-center my-10">
+    <div className="flex flex-col rounded-lg p-6 bg-[#242124] items-center my-10">
       <h2 className="font-bold text-lg mb-7">Pathway {name}</h2>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full">
@@ -43,11 +43,11 @@ export default function IntercontinentalBracket({
             onPickTeam2={() => { setPlayInWinner(playInMatch.team2); setError(""); }}
           />
 
-          <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-gray-300"></div>
-          <div className="absolute right-0 bottom-[33%] w-[30px] h-[3px] bg-gray-300"></div>
-          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-300"></div>
+          <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-gray-600"></div>
+          <div className="absolute right-0 bottom-[33%] w-[30px] h-[3px] bg-gray-600"></div>
+          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-600"></div>
 
-          <div className="absolute right-[-60px] top-1/2 w-[60px] h-[2px] bg-gray-300"></div>
+          <div className="absolute right-[-60px] top-1/2 w-[60px] h-[2px] bg-gray-600"></div>
         </div>
 
 

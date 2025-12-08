@@ -91,8 +91,8 @@ export default function IntercontinentalPlayoffs() {
         </div>
       </div>
       {areTeamsSelected && (
-        <div className="fixed inset-0 bg-[#edf5fc] animate-[fadeIn_0.4s_ease-out_forwards] bg-opacity-40 flex items-center justify-center z-40">
-          <div className="bg-white rounded-lg p-6 w-[350px] shadow-xl">
+        <div className="fixed inset-0 bg-[#1B1B1B] animate-[fadeIn_0.4s_ease-out_forwards] bg-opacity-40 flex items-center justify-center z-40">
+          <div className="bg-[#111111] rounded-lg p-6 w-[350px] shadow-xl">
 
             <h2 className="text-xl font-bold mb-4 text-center">
               Confirm your final picks.
@@ -100,7 +100,7 @@ export default function IntercontinentalPlayoffs() {
 
             <div className="space-y-3 mb-5">
               {winnersList.map((team, index) => (
-                <div key={index} className="flex items-center gap-3 border p-2 rounded">
+                <div key={index} className="flex items-center gap-3 border border-yellow-200 p-2 rounded">
                   <img src={team.flag} className="w-8 h-auto rounded-sm" />
                   <p className="font-semibold">{team.name}</p>
                 </div>

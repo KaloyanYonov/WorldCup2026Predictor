@@ -20,7 +20,7 @@ export default function RankableTeam({
   onSelectRank,
 }: RankableTeamProps) {
   return (
-    <div className="flex bg-[#cfdce8] items-center justify-between p-2 border rounded shadow-sm">
+    <div className="flex bg-[#1B1B1B] items-center justify-between p-2 border rounded shadow-sm">
       <Team {...team}/>
 
       <div className="flex gap-2 ml-4">

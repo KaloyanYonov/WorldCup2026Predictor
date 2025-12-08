@@ -13,13 +13,13 @@ export default function Match({ team1, team2, onPickTeam1, onPickTeam2 }: matchP
         <div className="flex flex-col gap-4 p-10 bg-transparent">
 
             <button onClick={onPickTeam1} className="active:scale-95 transition-transform">
-                <div className="border border-double rounded p-2 bg-white">
+                <div className="border border-double border-yellow-200 rounded p-2 bg-[#1B1B1B]">
                     <Team {...team1} />
                 </div>
             </button>
 
             <button onClick={onPickTeam2} className="active:scale-95 transition-transform">
-                <div className="border border-double rounded p-2 bg-white">
+                <div className="border border-double border-yellow-200 rounded p-2 bg-[#1B1B1B]">
                     <Team {...team2} />
                 </div>
             </button>

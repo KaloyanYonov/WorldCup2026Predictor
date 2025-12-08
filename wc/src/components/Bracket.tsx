@@ -22,7 +22,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
   }
 
   return (
-    <div className="flex flex-col rounded-lg p-5 bg-[#e8f1f7] items-center my-5">
+    <div className="flex flex-col rounded-lg p-5 bg-[#242124] items-center my-5">
       <h2 className="font-bold text-lg mb-4">Path {name}</h2>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-5xl">
@@ -35,11 +35,11 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             onPickTeam1={() => setWinner1(match1.team1)}
             onPickTeam2={() => setWinner1(match1.team2)}
           />
-          <div className="absolute right-0 top-[33%] h-[3px] w-[30px] bg-gray-300"></div>
-          <div className="absolute right-0 bottom-[33%] h-[3px] w-[30px] bg-gray-300"></div>
-          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-300"></div>
+          <div className="absolute right-0 top-[33%] h-[3px] w-[30px] bg-gray-600"></div>
+          <div className="absolute right-0 bottom-[33%] h-[3px] w-[30px] bg-gray-600"></div>
+          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-600"></div>
 
-          <div className="absolute right-[-70px] top-1/2 h-[3px] w-[70px] bg-gray-300"></div>
+          <div className="absolute right-[-70px] top-1/2 h-[3px] w-[70px] bg-gray-600"></div>
 
         </div>
 
@@ -64,12 +64,12 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             onPickTeam2={() => setWinner2(match2.team2)}
           />
 
-          <div className="absolute left-0 top-[33%] h-[3px] w-[30px] bg-gray-300"></div>
-          <div className="absolute left-0 bottom-[33%] h-[3px] w-[30px] bg-gray-300"></div>
+          <div className="absolute left-0 top-[33%] h-[3px] w-[30px] bg-gray-600"></div>
+          <div className="absolute left-0 bottom-[33%] h-[3px] w-[30px] bg-gray-600"></div>
 
-          <div className="absolute left-0 top-[33%] h-[33%] w-[2px] bg-gray-300"></div>
+          <div className="absolute left-0 top-[33%] h-[33%] w-[2px] bg-gray-600"></div>
 
-          <div className="absolute left-[-70px] top-1/2 h-[3px] w-[70px] bg-gray-300"></div>
+          <div className="absolute left-[-70px] top-1/2 h-[3px] w-[70px] bg-gray-600"></div>
 
         </div>
 

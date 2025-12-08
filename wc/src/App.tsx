@@ -9,7 +9,7 @@ import IntercontinentalPlayoffs from "./pages/IntercontinentalPlayoffs"
 function App() {
 
   return(
-    <div className="w-full min-h-screen flex items-center justify-center bg-[#edf5fc]">
+    <div className="w-full min-h-screen text-white flex items-center justify-center bg-[#1B1B1B]">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage/>}></Route>

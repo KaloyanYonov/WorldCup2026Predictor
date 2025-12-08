@@ -1,10 +1,19 @@
 import Header from "../components/Header";
 import Group from "../components/Group";
+import { useState } from "react";
 
 export default function GroupStage() {
+
+  const [complete, setComplete] = useState<boolean>(true);
+
+
   return (
+
+
     <div className="p-10 flex w-full items-center justify-center">
       <Header />
+
+      {complete ? <p>Please complete the European and Intercontinenal playoffs</p> :
 
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-40 pb-20 gap-7 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
 
@@ -96,7 +105,9 @@ export default function GroupStage() {
         ]}/>
 
 
-      </div>
+      </div>}
+
     </div>
+      
   );
 }

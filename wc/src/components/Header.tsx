@@ -5,8 +5,8 @@ export default function Header() {
     <header
       className="
         fixed top-0 left-0 w-full
-        bg-[#f3f7fa] backdrop-blur-md
-        border-b border-gray-200
+        bg-[#111111] backdrop-blur-md
+        border-b border-yellow-200
         z-50
       "
     >
