@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Group from "../components/Group";
 import { useState, useEffect } from "react";
 import type { teamProps } from "../components/Team";
+import RedirectButton from "../components/RedirectButton";
 
 export default function GroupStage() {
 
@@ -51,7 +52,17 @@ export default function GroupStage() {
     <div className="p-10 flex w-full items-center justify-center">
       <Header />
 
-      {!ready ? <p className="text-white flex items-center justify-center m-30 text-3xl">Please complete the European and Intercontinenal playoffs</p> :
+      {!ready ? 
+      <div className="flex flex-col items-center justify-center">
+          <p className="text-white flex items-center justify-center m-10 text-3xl">Please complete the European and Intercontinenal playoffs first.
+          </p> 
+          <div className="flex">
+            <RedirectButton to="/EuropeanPlayoffs" text="UEFA Playoffs"/>
+            <RedirectButton to="/intercontinentalPlayoffs" text="Intercontinental Playoffs"/>
+          </div>
+          
+
+      </div>:
 
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-40 pb-20 gap-7 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
 
