@@ -72,6 +72,16 @@ export default function GroupStage() {
     <div className="pl-5 pr-5 flex w-full items-center justify-center">
       <Header />
 
+      <div className="mt-32 flex flex-col items-center gap-2">
+        <SetButton onSet={handleOpenThirdPlace} />
+
+        {errorMsg && (
+          <p className="text-red-400 font-semibold animate-[fadeIn_0.2s_ease-out_forwards]">
+            {errorMsg}
+          </p>
+        )}
+      </div>
+
       {!ready ? (
         <div className="flex flex-col items-center justify-center animate-[fadeIn_0.4s_ease-out_forwards]">
           <p className="text-white flex items-center justify-center m-10 text-3xl">
@@ -87,7 +97,9 @@ export default function GroupStage() {
         </div>
       ) : (
         <>
+        {!showThirdPlace &&
           <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-40 pb-20 gap-7 opacity-0 animate-[fadeIn_0.4s_ease-out_forwards]">
+            
             <Group
               name="A"
               teams={[
@@ -347,29 +359,19 @@ export default function GroupStage() {
               ]}
               isGroupFinished={handleGroupFinished}
             />
-          </div>
+          </div>}
 
-          <div className="flex flex-col items-center gap-4 mt-10">
 
-            <SetButton onSet={handleOpenThirdPlace} />
+          {showThirdPlace && allGroupsDone && (
+            <ThirdPlace
+              teams={thirdPlaceTeams}
+              maxQualifiers={8}
+              onChange={(ordered) => {
+                localStorage.setItem("bestThirdTeams", JSON.stringify(ordered));
+              }}
+            />
+          )}
 
-            {errorMsg && (
-              <p className="text-red-400 font-semibold animate-[fadeIn_0.2s_ease-out_forwards]">
-                {errorMsg}
-              </p>
-            )}
-
-            {showThirdPlace && allGroupsDone && (
-              <ThirdPlace
-                teams={thirdPlaceTeams}
-                maxQualifiers={8}
-                onChange={(ordered) => {
-                  localStorage.setItem("bestThirdTeams", JSON.stringify(ordered));
-                }}
-              />
-            )}
-
-          </div>
 
         </>
       )}
