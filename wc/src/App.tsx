@@ -3,6 +3,7 @@ import MainPage from "./pages/MainPage"
 import GroupStage from "./pages/GroupStage"
 import EuropeanPlayoffs from "./pages/EuropeanPlayoffs"
 import IntercontinentalPlayoffs from "./pages/IntercontinentalPlayoffs"
+import KnockOut from "./pages/KnockOut"
 
 
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/groupStage" element={<GroupStage/>}></Route>
           <Route path="/intercontinentalPlayoffs" element={<IntercontinentalPlayoffs/>}></Route>
           <Route path="/EuropeanPlayoffs" element={<EuropeanPlayoffs/>}></Route>
+          <Route path="/knockOutStage" element={<KnockOut/>}></Route>
         </Routes>
       
       </BrowserRouter>

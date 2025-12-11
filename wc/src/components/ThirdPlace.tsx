@@ -53,7 +53,7 @@ export default function ThirdPlace({
     }
 
     function confirm() {
-
+        navigate("/knockOutStage")
      }
     function cancel() { 
         navigate("/");
