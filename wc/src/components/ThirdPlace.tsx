@@ -3,6 +3,7 @@ import type { teamProps } from "./Team";
 import Team from "./Team";
 import ConfirmButton from "./ConfirmButton";
 import CancelButton from "./CancelButton";
+import { useNavigate } from "react-router-dom";
 
 type ThirdPlaceProps = {
     teams: teamProps[];
@@ -16,6 +17,9 @@ export default function ThirdPlace({
     onChange,
 }: ThirdPlaceProps) {
     const [selectedOrder, setSelectedOrder] = useState<string[]>([]);
+
+    let navigate = useNavigate();
+
 
     useEffect(() => {
         const orderedTeams: teamProps[] = [];
@@ -48,8 +52,13 @@ export default function ThirdPlace({
         return selectedOrder.indexOf(teamName);
     }
 
-    function confirm() { }
-    function cancel() { }
+    function confirm() {
+
+     }
+    function cancel() { 
+        navigate("/");
+
+    }
 
     return (
         <div className="w-full absolute max-w-5xl mx-auto mb-16 mt-4 p-4 border border-yellow-300 rounded-lg bg-[#111111]">
