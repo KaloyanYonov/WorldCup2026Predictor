@@ -1,27 +1,45 @@
 import type { teamProps } from "./Team";
-
 import { useState } from "react";
 import RankableTeam from "./RankableTeam";
 
 export type groupProps = {
   name: string;
   teams: teamProps[];
+  isGroupFinished?: (thirdPlace: teamProps) => void;
 };
 
-export default function Group({ name, teams }: groupProps) {
+export default function Group({ name, teams, isGroupFinished }: groupProps) {
   const [rankings, setRankings] = useState<{ [team: string]: number | null }>(
-    Object.fromEntries(teams.map(t => [t.name, null]))
+    Object.fromEntries(teams.map((t) => [t.name, null]))
   );
 
   function setRank(teamName: string, rank: number) {
-    setRankings(prev => {
-      const updated = { ...prev };
+    setRankings((prev) => {
+      const updated: { [k: string]: number | null } = { ...prev };
 
       for (const key of Object.keys(updated)) {
-        if (updated[key] === rank) updated[key] = null;
+        if (updated[key] === rank) {
+          updated[key] = null;
+        }
       }
 
       updated[teamName] = rank;
+
+      const allAssigned = Object.values(updated).every((v) => v !== null);
+
+      if (allAssigned && isGroupFinished) {
+        const thirdTeamName = Object.keys(updated).find(
+          (k) => updated[k] === 3
+        );
+
+        if (thirdTeamName) {
+          const thirdTeam = teams.find((t) => t.name === thirdTeamName);
+          if (thirdTeam) {
+            isGroupFinished(thirdTeam);
+          }
+        }
+      }
+
       return updated;
     });
   }
