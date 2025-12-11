@@ -1,0 +1,63 @@
+[
+WINNER E
+3RD A/B/C/D/F
+
+WINNER I 
+3RD C/D/F/G/H
+]
+
+[
+2ND A
+2ND B
+
+WINNER F
+2ND C
+]
+
+[
+2ND K
+2ND L
+
+WINNER H
+2ND J
+]
+
+[
+WINNER D
+3RD B/E/F/I/J
+
+WINNER G
+3RD A/E/H/I/J
+]
+
+[
+WINNER C
+2ND F
+
+2ND E
+2ND I
+]
+
+[
+WINNER A
+3RD C/E/F/H/I
+
+WINNER L
+3RD E/H/I/J/K
+]
+
+[
+WINNER J
+2ND H
+
+2ND D
+2ND G
+]
+
+[
+WINNER B
+3RD E/F/G/I/J
+
+WINNER K
+3RD D/E/I/J/L
+]
