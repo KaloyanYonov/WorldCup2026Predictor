@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { teamProps } from "./Team";
 import Team from "./Team";
 import ConfirmButton from "./ConfirmButton";
@@ -17,9 +17,10 @@ export default function ThirdPlace({
     onChange,
 }: ThirdPlaceProps) {
     const [selectedOrder, setSelectedOrder] = useState<string[]>([]);
+    const onChangeRef = useRef(onChange);
+    onChangeRef.current = onChange;
 
-    let navigate = useNavigate();
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         const orderedTeams: teamProps[] = [];
@@ -29,8 +30,8 @@ export default function ThirdPlace({
                 orderedTeams.push(team);
             }
         }
-        onChange(orderedTeams);
-    }, [selectedOrder, teams, onChange]);
+        onChangeRef.current(orderedTeams);
+    }, [selectedOrder, teams]);
 
     function toggleTeam(teamName: string) {
         setSelectedOrder((prev) => {
@@ -53,12 +54,14 @@ export default function ThirdPlace({
     }
 
     function confirm() {
-        navigate("/knockOutStage")
-     }
-    function cancel() { 
-        navigate("/");
-
+        navigate("/knockOutStage");
     }
+
+    function cancel() {
+        navigate("/");
+    }
+
+    const isComplete = selectedOrder.length === maxQualifiers;
 
     return (
         <div className="w-full absolute max-w-5xl mx-auto mb-16 mt-4 p-4 border border-yellow-300 rounded-lg bg-[#111111]">
@@ -69,17 +72,12 @@ export default function ThirdPlace({
                 Selected: {selectedOrder.length} / {maxQualifiers}
             </p>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-6">
                 {teams.map((team) => {
                     const rankIndex = getRankIndex(team.name);
                     const isSelected = rankIndex !== -1;
-
                     const rankLabel = isSelected ? String(rankIndex + 1) : "";
-
-                    let borderClass = "border-gray-600";
-                    if (isSelected) {
-                        borderClass = "border-yellow-400";
-                    }
+                    const borderClass = isSelected ? "border-yellow-400" : "border-gray-600";
 
                     return (
                         <button
@@ -96,14 +94,15 @@ export default function ThirdPlace({
                                     {rankLabel}
                                 </span>
                             )}
-
                             <Team {...team} />
-
                         </button>
                     );
                 })}
-                <CancelButton onCancel={cancel}/>
-                <ConfirmButton onConfirm={confirm} />
+            </div>
+
+            <div className="flex justify-between items-center pt-4 border-t border-gray-700">
+                <CancelButton onCancel={cancel} />
+                <ConfirmButton onConfirm={confirm} disabled={!isComplete} />
             </div>
         </div>
     );

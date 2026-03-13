@@ -41,6 +41,7 @@ export default function IntercontinentalBracket({
             team2={playInMatch.team2}
             onPickTeam1={() => { setPlayInWinner(playInMatch.team1); setError(""); }}
             onPickTeam2={() => { setPlayInWinner(playInMatch.team2); setError(""); }}
+            selectedTeam={playInWinner}
           />
 
           <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-gray-600"></div>
@@ -59,6 +60,7 @@ export default function IntercontinentalBracket({
             team2={seededTeam}
             onPickTeam1={() => playInWinner && handleFinalPick(playInWinner)}
             onPickTeam2={() => handleFinalPick(seededTeam)}
+            selectedTeam={finalWinner}
           />
 
 

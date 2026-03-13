@@ -77,7 +77,7 @@ export default function GroupStage() {
       {!ready ? (
         <div className="flex flex-col items-center justify-center animate-[fadeIn_0.4s_ease-out_forwards]">
           <p className="text-white flex items-center justify-center m-10 text-3xl">
-            Please complete the European and Intercontinenal playoffs first.
+            Please complete the European and Intercontinental playoffs first.
           </p>
           <div className="flex">
             <RedirectButton to="/EuropeanPlayoffs" text="UEFA Playoffs" />
@@ -170,7 +170,7 @@ export default function GroupStage() {
                     name: "Australia",
                     flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/330px-Flag_of_Australia_%28converted%29.svg.png",
                   },
-                  winnerC ?? { name: "undefined", flag: "" },
+                  winnerC ?? { name: "TBD", flag: "" },
                 ]}
                 isGroupFinished={handleGroupFinished}
               />
@@ -208,7 +208,7 @@ export default function GroupStage() {
                     name: "Japan",
                     flag: "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
                   },
-                  winnerB ?? { name: "undefined", flag: "" },
+                  winnerB ?? { name: "TBD", flag: "" },
                   {
                     name: "Tunisia",
                     flag: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg",
@@ -274,7 +274,7 @@ export default function GroupStage() {
                     name: "Senegal",
                     flag: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg",
                   },
-                  path2 ?? { name: "undefined", flag: "" },
+                  path2 ?? { name: "TBD", flag: "" },
                   {
                     name: "Norway",
                     flag:
@@ -316,7 +316,7 @@ export default function GroupStage() {
                     flag:
                       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Flag_of_Portugal_%28official%29.svg/1200px-Flag_of_Portugal_%28official%29.svg.png",
                   },
-                  path1 ?? { name: "undefined", flag: "" },
+                  path1 ?? { name: "TBD", flag: "" },
                   {
                     name: "Uzbekistan",
                     flag:

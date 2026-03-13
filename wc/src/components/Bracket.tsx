@@ -34,6 +34,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             team2={match1.team2}
             onPickTeam1={() => setWinner1(match1.team1)}
             onPickTeam2={() => setWinner1(match1.team2)}
+            selectedTeam={winner1}
           />
           <div className="absolute right-0 top-[33%] h-[3px] w-[30px] bg-gray-600"></div>
           <div className="absolute right-0 bottom-[33%] h-[3px] w-[30px] bg-gray-600"></div>
@@ -52,6 +53,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             team2={winner2 ?? { name: "TBD", flag: "" }}
             onPickTeam1={() => winner1 && handleFinalPick(winner1)}
             onPickTeam2={() => winner2 && handleFinalPick(winner2)}
+            selectedTeam={finalWinner}
           />
         </div>
 
@@ -62,6 +64,7 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
             team2={match2.team2}
             onPickTeam1={() => setWinner2(match2.team1)}
             onPickTeam2={() => setWinner2(match2.team2)}
+            selectedTeam={winner2}
           />
 
           <div className="absolute left-0 top-[33%] h-[3px] w-[30px] bg-gray-600"></div>
