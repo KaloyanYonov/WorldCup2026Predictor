@@ -131,7 +131,7 @@ export default function EuropeanPlayoffs() {
           onFinalWinner={setWinnerD}
         />
 
-        <div className="flex justify-end mt-10 gap-15">
+        <div className="flex justify-end mt-10 gap-5">
           <ClearButton onClear={handleClear} />
           <SetButton onSet={handleSet} />
         </div>

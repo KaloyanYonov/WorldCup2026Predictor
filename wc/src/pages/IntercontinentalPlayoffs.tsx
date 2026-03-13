@@ -100,7 +100,7 @@ export default function IntercontinentalPlayoffs() {
           />
 
         </div>
-        <div className="flex gap-15 justify-end  pl-50 pt-5 mb-17">
+        <div className="flex gap-5 justify-end  pl-50 pt-5 mb-17">
           <ClearButton onClear={handleClear} />
 
           <SetButton onSet={handleSet} />
