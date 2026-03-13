@@ -74,20 +74,68 @@ export default function GroupStage() {
 
 
 
-      {!ready ? (
-        <div className="flex flex-col items-center justify-center animate-[fadeIn_0.4s_ease-out_forwards]">
-          <p className="text-white flex items-center justify-center m-10 text-3xl">
-            Please complete the European and Intercontinental playoffs first.
-          </p>
-          <div className="flex">
-            <RedirectButton to="/EuropeanPlayoffs" text="UEFA Playoffs" />
-            <RedirectButton
-              to="/intercontinentalPlayoffs"
-              text="Intercontinental Playoffs"
+      {!ready ? (() => {
+        const uefaDone = !!(winnerA && winnerB && winnerC && winnerD);
+        const intercoDone = !!(path1 && path2);
+        return (
+          <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden -mx-5">
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage: "radial-gradient(rgba(255,255,200,0.04) 1px, transparent 1px)",
+                backgroundSize: "32px 32px",
+              }}
             />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+              <span
+                className="font-black text-white leading-none tracking-tight"
+                style={{ fontSize: "clamp(10rem, 38vw, 26rem)", opacity: 0.025 }}
+              >
+                2026
+              </span>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center gap-6 text-center px-8 py-10 rounded-2xl border border-yellow-200/20 bg-white/5 backdrop-blur-sm shadow-xl opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] max-w-sm w-full mx-4">
+              <div className="flex flex-col gap-2">
+                <h2 className="text-white text-2xl font-black uppercase tracking-widest">
+                  Step Required
+                </h2>
+                <p className="text-white/40 text-sm">
+                  Complete the playoffs before the Group Stage unlocks.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2 w-full">
+                <div className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-wide ${uefaDone ? "bg-green-500/10 text-green-400" : "bg-white/5 text-white/40"}`}>
+                  <span>{uefaDone ? "✓" : "✗"}</span>
+                  <span>UEFA Playoffs</span>
+                </div>
+                <div className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-wide ${intercoDone ? "bg-green-500/10 text-green-400" : "bg-white/5 text-white/40"}`}>
+                  <span>{intercoDone ? "✓" : "✗"}</span>
+                  <span>Intercontinental Playoffs</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 w-full">
+                {!uefaDone && (
+                  <RedirectButton
+                    to="/EuropeanPlayoffs"
+                    text="UEFA Playoffs"
+                    className="animate-[pulse_2s_ease-in-out_infinite]"
+                  />
+                )}
+                {!intercoDone && (
+                  <RedirectButton
+                    to="/intercontinentalPlayoffs"
+                    text="Intercontinental Playoffs"
+                    className="animate-[pulse_2s_ease-in-out_infinite]"
+                  />
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      ) : (
+        );
+      })() : (
         <>
           {!showThirdPlace &&
 

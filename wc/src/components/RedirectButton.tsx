@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 
 type RedirectButtonProps = {
   to: string;
-  text:string;
+  text: string;
+  className?: string;
 };
 
-export default function RedirectButton({ to, text }: RedirectButtonProps) {
+export default function RedirectButton({ to, text, className = "" }: RedirectButtonProps) {
   return (
     <Link
       to={to}
-      className="bg-[#1B1B1B] border border-yellow-200 hover:bg-yellow-500 hover:text-black px-4 py-2 rounded text-white text-center m-2 active:scale-95 transition"
+      className={`w-full px-4 py-3 bg-yellow-400 text-black font-bold text-sm uppercase tracking-widest rounded hover:bg-yellow-300 active:scale-95 transition-all text-center leading-tight ${className}`}
     >
       {text}
     </Link>
