@@ -66,20 +66,16 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
     <div className="flex flex-col rounded-lg p-5 bg-[#242124] items-center my-5 overflow-x-auto">
       <h2 className="font-bold text-lg mb-6">Path {name}</h2>
 
-      {/* Section labels — separate row so columns below have equal height */}
       <div className="flex items-center justify-center w-full mb-2 text-[11px] uppercase tracking-widest text-gray-500">
         <div className="flex-1 text-center">Semi-final</div>
-        {/* spacer matching connector width: arm (w-5) + line (w-6) = ~44px × 2 sides */}
         <div className="w-[88px] shrink-0"></div>
         <div className="flex-1 text-center">Final</div>
         <div className="w-[88px] shrink-0"></div>
         <div className="flex-1 text-center">Semi-final</div>
       </div>
 
-      {/* Bracket row — all three columns have the same height */}
       <div className="flex items-center justify-center">
 
-        {/* Left semi + right arm */}
         <div className="flex items-stretch">
           <div className="flex flex-col gap-2 p-2">
             <TeamBtn
@@ -97,7 +93,6 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
           <div className="w-6 border-t-2 border-yellow-200/25 self-center shrink-0"></div>
         </div>
 
-        {/* Final — no label here, so height = 2 buttons = same as semis */}
         <div className="flex flex-col gap-2 p-2 shrink-0">
           <TeamBtn
             team={winner1 ?? { name: "TBD", flag: "" }}
@@ -111,7 +106,6 @@ export default function Bracket({ name, match1, match2, finalWinner, onFinalWinn
           />
         </div>
 
-        {/* Left arm + right semi */}
         <div className="flex items-stretch">
           <div className="w-6 border-t-2 border-yellow-200/25 self-center shrink-0"></div>
           <ArmLeft />

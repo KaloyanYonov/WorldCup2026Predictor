@@ -59,7 +59,6 @@ export default function IntercontinentalBracket({
 
       <div className="flex flex-col items-center w-full max-w-xs">
 
-        {/* Play-in section */}
         <div className="w-full">
           <p className="text-[11px] uppercase tracking-widest text-gray-500 text-center mb-3">
             Play-in
@@ -78,7 +77,6 @@ export default function IntercontinentalBracket({
           </div>
         </div>
 
-        {/* Vertical connector */}
         <div className="flex flex-col items-center my-4">
           <div className="w-px h-4 bg-gray-500"></div>
           <p className="text-[10px] uppercase tracking-widest text-gray-500 px-3 py-0.5 border border-gray-700 rounded-full my-1">
@@ -87,7 +85,6 @@ export default function IntercontinentalBracket({
           <div className="w-px h-4 bg-gray-500"></div>
         </div>
 
-        {/* Final section */}
         <div className="w-full">
           <p className="text-[11px] uppercase tracking-widest text-gray-500 text-center mb-3">
             Final
