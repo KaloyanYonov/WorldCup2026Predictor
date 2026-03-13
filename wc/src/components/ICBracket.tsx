@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Match from "./Match";
 import type { teamProps } from "./Team";
+import Team from "./Team";
 
 type IntercontinentalBracketProps = {
   name: string;
@@ -29,55 +29,97 @@ export default function IntercontinentalBracket({
     onFinalWinner(team);
   }
 
+  function TeamBtn({
+    team,
+    isSelected,
+    onClick,
+  }: {
+    team: teamProps;
+    isSelected: boolean;
+    onClick: () => void;
+  }) {
+    return (
+      <button onClick={onClick} className="active:scale-95 transition-transform text-left w-full">
+        <div
+          className={`border rounded p-2 transition-colors ${
+            isSelected
+              ? "border-yellow-400 bg-yellow-400/10"
+              : "border-double border-yellow-200 bg-[#1B1B1B] hover:bg-[#252525]"
+          }`}
+        >
+          <Team {...team} />
+        </div>
+      </button>
+    );
+  }
+
   return (
-    <div className="flex flex-col rounded-lg p-6 bg-[#242124] items-center my-10">
-      <h2 className="font-bold text-lg mb-7">Pathway {name}</h2>
+    <div className="flex flex-col rounded-lg p-6 bg-[#242124] items-center my-10 w-full">
+      <h2 className="font-bold text-lg mb-8">Pathway {name}</h2>
 
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full">
-        <div className="relative flex flex-col items-end">
+      <div className="flex flex-col items-center w-full max-w-xs">
 
-          <Match
-            team1={playInMatch.team1}
-            team2={playInMatch.team2}
-            onPickTeam1={() => { setPlayInWinner(playInMatch.team1); setError(""); }}
-            onPickTeam2={() => { setPlayInWinner(playInMatch.team2); setError(""); }}
-            selectedTeam={playInWinner}
-          />
-
-          <div className="absolute right-0 top-[33%] w-[30px] h-[3px] bg-gray-600"></div>
-          <div className="absolute right-0 bottom-[33%] w-[30px] h-[3px] bg-gray-600"></div>
-          <div className="absolute right-0 top-[33%] h-[33%] w-[2px] bg-gray-600"></div>
-
-          <div className="absolute right-[-60px] top-1/2 w-[60px] h-[2px] bg-gray-600"></div>
+        {/* Play-in section */}
+        <div className="w-full">
+          <p className="text-[11px] uppercase tracking-widest text-gray-500 text-center mb-3">
+            Play-in
+          </p>
+          <div className="flex flex-col gap-2">
+            <TeamBtn
+              team={playInMatch.team1}
+              isSelected={playInWinner?.name === playInMatch.team1.name}
+              onClick={() => { setPlayInWinner(playInMatch.team1); setError(""); }}
+            />
+            <TeamBtn
+              team={playInMatch.team2}
+              isSelected={playInWinner?.name === playInMatch.team2.name}
+              onClick={() => { setPlayInWinner(playInMatch.team2); setError(""); }}
+            />
+          </div>
         </div>
 
-
-        <div className="relative flex flex-col items-center mx-7 my-6 mb-11">
-          <div className="text-center text-lg">Final</div>
-
-          <Match
-            team1={playInWinner ?? { name: "TBD", flag: "" }}
-            team2={seededTeam}
-            onPickTeam1={() => playInWinner && handleFinalPick(playInWinner)}
-            onPickTeam2={() => handleFinalPick(seededTeam)}
-            selectedTeam={finalWinner}
-          />
-
-
+        {/* Vertical connector */}
+        <div className="flex flex-col items-center my-4">
+          <div className="w-px h-4 bg-gray-500"></div>
+          <p className="text-[10px] uppercase tracking-widest text-gray-500 px-3 py-0.5 border border-gray-700 rounded-full my-1">
+            winner advances
+          </p>
+          <div className="w-px h-4 bg-gray-500"></div>
         </div>
 
-
+        {/* Final section */}
+        <div className="w-full">
+          <p className="text-[11px] uppercase tracking-widest text-gray-500 text-center mb-3">
+            Final
+          </p>
+          <div className="flex flex-col gap-2">
+            <TeamBtn
+              team={playInWinner ?? { name: "TBD", flag: "" }}
+              isSelected={finalWinner?.name === playInWinner?.name && !!playInWinner}
+              onClick={() => playInWinner && handleFinalPick(playInWinner)}
+            />
+            <TeamBtn
+              team={seededTeam}
+              isSelected={finalWinner?.name === seededTeam.name}
+              onClick={() => handleFinalPick(seededTeam)}
+            />
+          </div>
         </div>
 
+      </div>
 
-      {finalWinner ? (
-        <div className="mt-6 p-2 rounded-lg animate-[fadeIn_0.4s_ease-out_forwards] font-bold text-lg">
-          <p className="text-center">Winner of this Path:</p>
-          <img src={finalWinner.flag} className="w-25 pt-3 h-auto mx-auto" />
-          <p className="text-center p-4">{finalWinner.name}</p>
+      {error && (
+        <p className="text-red-400 font-semibold mt-5 text-sm animate-[fadeIn_0.2s_ease-out_forwards]">
+          {error}
+        </p>
+      )}
+
+      {finalWinner && (
+        <div className="mt-6 animate-[fadeIn_0.4s_ease-out_forwards] text-center font-bold">
+          <p className="text-yellow-200 text-sm uppercase tracking-widest">Winner of this Path</p>
+          <img src={finalWinner.flag} className="w-20 pt-3 h-auto mx-auto rounded" />
+          <p className="pt-3 text-lg">{finalWinner.name}</p>
         </div>
-      ) : (
-        error && <p className="text-red-600 font-semibold mt-4">{error}</p>
       )}
     </div>
   );
