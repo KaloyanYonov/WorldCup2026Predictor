@@ -57,16 +57,14 @@ export default function GroupStage() {
   }
 
 
-  const [thirdPlaceTeams, setThirdPlaceTeams] = useState<teamProps[]>([]);
+  const [thirdPlaceMap, setThirdPlaceMap] = useState<Record<string, teamProps>>({});
 
-  function handleGroupFinished(thirdPlace: teamProps) {
-    setThirdPlaceTeams((prev) => {
-      const filtered = prev.filter((t) => t.name !== thirdPlace.name);
-      return [...filtered, thirdPlace];
-    });
+  function handleGroupFinished(groupName: string, thirdPlace: teamProps) {
+    setThirdPlaceMap((prev) => ({ ...prev, [groupName]: thirdPlace }));
   }
 
-  const allGroupsDone = thirdPlaceTeams.length === 12;
+  const allGroupsDone = Object.keys(thirdPlaceMap).length === 12;
+  const thirdPlaceTeams = Object.values(thirdPlaceMap);
 
   return (
     <div className="pl-5 pr-5 flex w-full items-center justify-center">

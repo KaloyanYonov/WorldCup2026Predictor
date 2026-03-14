@@ -1,46 +1,61 @@
 import Team from "./Team";
 import type { teamProps } from "./Team";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
-type RankableTeamProps = {
+export type RankableTeamProps = {
   team: teamProps;
-  selectedRank: number | null;
-  onSelectRank: (rank: number) => void;
+  rank: number;
 };
 
-const rankColors: Record<number,string> = {
-  1: "bg-yellow-400",
-  2: "bg-gray-400",       
-  3: "bg-amber-700" ,      
-  4: "bg-red-600",    
+const rankStyles: Record<number, { label: string; color: string }> = {
+  1: { label: "1st", color: "text-yellow-400" },
+  2: { label: "2nd", color: "text-gray-300" },
+  3: { label: "3rd", color: "text-amber-600" },
+  4: { label: "4th", color: "text-red-500" },
 };
 
-export default function RankableTeam({
-  team,
-  selectedRank,
-  onSelectRank,
-}: RankableTeamProps) {
+export default function RankableTeam({ team, rank }: RankableTeamProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: team.name });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.4 : 1,
+    zIndex: isDragging ? 10 : undefined,
+  };
+
+  const { label, color } = rankStyles[rank] ?? { label: `${rank}`, color: "text-white" };
+
   return (
-    <div className="flex bg-[#1b1b1b] items-center justify-between p-2 border border-yellow-100 rounded shadow-sm">
-      <Team {...team}/>
-
-      <div className="flex gap-2 ml-4">
-        {[1, 2, 3, 4].map((rank) => {
-          const isSelected = selectedRank === rank;
-
-          return (
-            <button
-              key={rank}
-              onClick={() => onSelectRank(rank)}
-              className={`
-                w-8 h-8 flex items-center justify-center rounded border-yellow-100 border text-sm transition-all duration-200
-                ${isSelected ? rankColors[rank] : "bg-[#1b1b1b] hover:bg-[#343434]"}
-              `}
-            >
-              {rank}
-            </button>
-          );
-        })}
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="flex bg-[#1b1b1b] items-center justify-between p-2 border border-yellow-100 rounded shadow-sm"
+    >
+      <div
+        {...attributes}
+        {...listeners}
+        className="cursor-grab active:cursor-grabbing mr-3 text-yellow-200/40 hover:text-yellow-200/70 transition-colors select-none text-lg leading-none"
+        title="Drag to reorder"
+      >
+        ⠿
       </div>
+
+      <div className="flex-1">
+        <Team {...team} />
+      </div>
+
+      <span className={`ml-4 text-sm font-bold tabular-nums ${color}`}>
+        {label}
+      </span>
     </div>
   );
 }
